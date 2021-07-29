@@ -139,7 +139,7 @@ const forgotPasswordVerificationHandler = async (req, res) => {
     const verificationCode = Math.floor(Math.random() * 900000);
 
     const mailOptions = {
-      from: "nikita.zot.1408@gmail.com",
+      from: process.env.E_MAIL,
       to: `${req.body.email}`,
       subject: "Verification code",
       text: `${verificationCode}`,
